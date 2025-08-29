@@ -135,6 +135,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+.profile-pics-down-arrow{
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border: 2px solid white;
+    background-color: rgb(233, 233, 233);
+    border-radius: 50%;
+    bottom: 0;
+    right: -4px;
 }
 .menu-background{
     display: flex;
