@@ -1,0 +1,236 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 600px) {
+    .header{
+        flex-direction: column;
+    }
+}
+.left-section{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 20%;
+}
+.facebook-logo{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f0f2f5;
+  border-radius: 20px;
+  padding: 10px 10px;
+  margin-left: 15px;
+}
+
+.search-box .search-icon {
+  width: 16px;
+  margin-right: 8px;
+}
+
+.search-box .search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.search-input{
+    font-weight: bold;
+}
+
+.search-input::placeholder{
+    font-weight: bold;
+}
+
+.middle-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex: 2;
+    max-width: 600px;
+    gap: 40px;
+    height: 50px;
+}
+@media (max-width: 600px) {
+    .middle-section{
+        display: none;
+    }
+}
+.middle-section-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.icon-tooltip{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.tooltip {
+  opacity: 0;
+  visibility: hidden; 
+  position: absolute;
+  background-color: black;
+  bottom: -30px; 
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(8px); 
+  color: white;
+  font-size: 13px;
+}
+
+.icon-tooltip:hover .tooltip {
+  opacity: 0.9;
+  visibility: visible;
+  transform: translateY(0); 
+}
+.icon-tooltip{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+}
+.icon-tooltip:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.icon{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    margin-left: 40px;
+    margin-right: 40px ;
+}
+
+.right-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 20%;
+    flex: 1;
+}
+.profile-pics-background{
+    background-color: rgb(233, 233, 233);
+    height: 34px;
+    width: 34px;
+    border-radius: 25px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    margin-left: 30px;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+}
+.menu-background:hover{
+    cursor: pointer;
+    background-color: rgb(217, 217, 217);
+}
+.menu-background:hover .tooltip{
+    opacity: 0.9;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.profile-pics{
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    object-fit: cover;
+
+}
+.profile-pics-background:hover .tooltip{
+    opacity: 0.9;
+    visibility: visible;
+    transform: translateY(0);
+}
+.messenger{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.messenger-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    margin-left: 30px;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    transition: background-color 0.1s;
+}
+.messenger-background:hover{
+    cursor: pointer;
+    background-color: rgb(217, 217, 217);
+}
+.messenger-background:hover .tooltip{
+    opacity: 0.9;
+    visibility: visible;
+    transform: translateY(0);
+}
+.notification{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+.notification-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    margin-left: 30px;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    transition: background-color 0.1s;
+}
+.notification-background:hover{
+    cursor: pointer;
+    background-color: rgb(217, 217, 217);
+}
+.notification-background:hover .tooltip{
+    opacity: 0.9;
+    visibility: visible;
+    transform: translateY(0);
+}

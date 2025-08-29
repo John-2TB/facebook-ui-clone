@@ -1,0 +1,65 @@
+:root{
+    --badge-pad: 10px 14px;
+    --badge-radius: 14px;
+    --badge-size: 14px;            /* base font size */
+    --badge-z: 99999;
+}
+
+.legend-badge{
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: var(--badge-z);
+    font-family: system-ui, Segoe UI, Arial, sans-serif;
+    font-weight: 800;
+    font-size: calc(var(--badge-size) * 1.1);
+    letter-spacing: 0.4px;
+    padding: var(--badge-pad);
+    border-radius: var(--badge-radius);
+    color: white;
+    background: linear-gradient(135deg,#cbe53a,#1fc6c0,#d33434,#ec17f4,#0bf50b,#0702f9,#ff8902);
+    background-size: 400% 400%;
+    box-shadow:
+    0 8px 24px rgba(0,0,0,.25),
+    0 0 20px rgba(109,40,217,.5);
+    text-shadow: 0 1px 0 rgba(0,0,0,.4);
+    transform-origin: 100% 100%;
+    animation:
+    badge-gradient 7s ease infinite,
+    badge-float 3.5s ease-in-out infinite,
+    badge-glow 2.2s ease-in-out infinite;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;          /* it won’t block clicks on your UI */
+}
+
+/* Smooth color cycle */
+@keyframes badge-gradient{
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+/* Gentle motion near the corner */
+@keyframes badge-float{
+    0%,100%{ transform: translate(0,0) rotate(0.0001deg); }
+    25%{    transform: translate(-4px,-3px); }
+    50%{    transform: translate(-8px, 0px); }
+    75%{    transform: translate(-4px, 3px); }
+}
+/* Pulse the glow */
+@keyframes badge-glow{
+    0%,100%{ box-shadow: 0 8px 24px rgba(0,0,0,.25), 0 0 14px rgba(109,40,217,.55); }
+    50%{    box-shadow: 0 8px 24px rgba(0,0,0,.25), 0 0 26px rgba(109,40,217,.9); }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce){
+    .legend-badge{
+    animation: badge-gradient 12s linear infinite;
+    }
+}
+
+/* Optional: shrink slightly on very small screens */
+@media (max-width: 420px){
+    .legend-badge{ font-size: var(--badge-size); right: 10px; bottom: 10px; }
+}
